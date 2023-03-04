@@ -10,6 +10,7 @@ body {
   main, header, nav {
     display: flex;
   }
+  
   header {
     h1 {
       font-family: 'Secular One', sans-serif;
@@ -30,6 +31,7 @@ body {
       padding: 3px;
     }
   }
+
   #chat-panel, h1 {
     border-right: 1px solid $color-dark-gray;
     flex: 3 1;
