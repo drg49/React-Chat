@@ -6,9 +6,9 @@ export default function Signup({ formData, isLoading, setIsLoading, spinner }) {
   const handleSignUp = () => {
     setIsLoading(true);
     api.signUp(formData)
-        .then((data) => {
-          console.log(data);
-          setIsLoading(false);
+        .then(() => {
+          api.login({ usernameOrEmail: formData.username, password: formData.password})
+              .then(() => api.validateUser().then(() => window.location.reload()));
         })
         .catch(() => setIsLoading(false));
   }

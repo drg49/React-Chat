@@ -34,3 +34,14 @@ export const login = async (formData) => handleResponse(
     body: JSON.stringify(formData)
   })
 );
+
+export const logout = async () => handleResponse(
+  await fetch(`${root}/user/logout`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    withCredentials: true,
+    credentials: 'include'
+  })
+);
